@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Labrada&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="portfolio.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="content">
+                <!-- Name -->
+                <h1 class="name">
+                    Tímea<br>
+                    Szabóné Hanus
+                </h1>
+
+                <!-- Contact -->
+                <div class="contact">
+                    <p><a href="mailto:timea.hanus@gmail.com">timea.hanus@gmail.com</a></p>
+                    <p><a href="tel:+36309666269">+36309666269</a></p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline">
+                    <section>
+                        <h2 class="year">2025</h2>
+                        <div class="project">
+                            <h3 class="project-title">Unity - game development project - game design</h3>
+                            <div class="project-items">
+                                <p>• Menu design</p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+							<h3><a href="#" class="project-link" data-image="Szabóné Hanus Tímea.png">WP Kurzus webdesign challenge</a></h3>
+                            <div class="project-items">
+								<p>• <a href="#" class="project-link" data-image="5. kihívás - Weboldal design - Szabóné Hanus Tímea.png">Website design</a></p>
+								<p>• <a href="#" class="project-link" data-image="WEK5 - 4. kihívás - Hero szakasz - Szabóné Hanus Tímea.png">Hero section</a></p>
+								<p>• <a href="#" class="project-link" data-image="3. kihívás - Kompozíciós szabályok - Szabóné Hanus Tímea.png">Composition rules</a></p>
+								<p>• <a href="#" class="project-link" data-image="Arculati tábla - Szabóné Hanus Tímea.png">Image board</a></p>
+                                <p>• <a href="#" class="project-link" data-image="WEK - Moodboard sablon - Szabóné Hanus Tímea.png">Moodboard</a></p>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <h3 class="project-title">The CareerFoundry UX Design for Beginners Course</h3>
+                            <div class="project-items">
+								<p>• <a href="#" class="project-link" data-image="Shoptacle.png">Shoptacle</a></p>
+                                <p>• <a href="#" class="project-link" data-image="Vima.png">Vima</a></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="year">2024</h2>
+                        <div class="project">
+                            <h3 class="project-title">Godot</h3>
+                            <div class="project-items">
+                                <p>• <a href="#" class="project-link" data-image="Totti.png">Tale of the little rabbit</a></p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Vertical Portfolio Text -->
+            <div class="portfolio-text">
+				<span>P</span>
+				<span>o</span>
+				<span>r</span>
+				<span>t</span>
+				<span>f</span>
+				<span>o</span>
+				<span>l</span>
+				<span>i</span>
+				<span>o</span>
+			</div>
+        </div>
+
+        <div class="right-panel">
+            <div class="circle-container">
+                <div class="circle"></div>
+                <div class="circle-outline-1"></div>
+                <div class="circle-outline-2"></div>
+            </div>
+            <div class="image-display">
+                <img src="kep.png" alt="Project Image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.project-link');
+            const imageDisplay = document.querySelector('.image-display');
+            const displayImage = imageDisplay.querySelector('img');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const imageSrc = this.getAttribute('data-image');
+                    displayImage.src = imageSrc;
+                    imageDisplay.style.display = 'flex';
+                    
+                    // Ensure the image is fully loaded before displaying
+                    displayImage.onload = function() {
+                        imageDisplay.style.display = 'flex';
+                    };
+                    displayImage.onerror = function() {
+                        console.error('Error loading image:', imageSrc);
+                    };
+                });
+            });
+
+            imageDisplay.addEventListener('click', function() {
+                this.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
+
