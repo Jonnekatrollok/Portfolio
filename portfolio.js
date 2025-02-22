@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const scrollY = window.scrollY;
 
 		if (scrollY > 100) {
-			name.style.fontSize = "30px";
+			name.style.fontSize = "26px";
 			contact.classList.add('fixed');
 		} else if (scrollY > 50) {
 			name.style.fontSize = "60px";
